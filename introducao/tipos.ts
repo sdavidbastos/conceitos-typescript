@@ -13,7 +13,7 @@ minhaIdade = 27;
 // console.log(typeof minhaIdade)
 
 // array
-let hobbies: any[] = ["cozinhar", "praticar", "esportes"];
+let hobbies: (number|string)[] = ["cozinhar", "praticar", "esportes"];
 // console.log(hobbies[0])
 // console.log(typeof hobbies)
 
@@ -59,6 +59,8 @@ function mutiplicar(numA: number, numB: number): number {
 console.log(mutiplicar(4.7, 9));
 
 const teste = function (a: number, b: number): boolean {
+  a
+  b
   return true;
 };
 
