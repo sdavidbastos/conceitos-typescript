@@ -103,7 +103,87 @@ class Ferrari extends Carro {
 
 const f40 = new Ferrari('F40', 324)
 
-console.log(`${f40.marca} ${f40.modelo}`)
-console.log(f40.acelerar())
+// console.log(`${f40.marca} ${f40.modelo}`)
+// console.log(f40.acelerar())
 
-console.log(f40.frear())
+// console.log(f40.frear())
+
+// Getters & Setters
+
+class Pessoa {
+    private _idade: number = 0
+
+    get idade(): number {
+        return this._idade
+    }
+
+    set idade(valor: number){
+        if(valor >= 0 && valor<=120){
+            this._idade = valor
+        }
+    }
+}
+
+const pessoa1 = new Pessoa
+pessoa1.idade = 10
+// console.log(pessoa1.idade)
+
+// pessoa1.idade = -3
+
+// console.log(pessoa1.idade)
+
+// Atributos e métodos estáticos
+
+class Matematica{
+    static PI: number = 3.1416
+
+    static areaCirc(raio:number):number{
+        return this.PI*raio*raio
+    }
+}
+
+// const m1 = new Matematica()
+// m1.PI = 4.2
+// console.log(m1.areaCirc(4))
+// console.log(Matematica.areaCirc(4))
+
+// Objetivo da classe abstract é classes filhas herdar.
+// Perde o poder de instância
+// abstract class X {
+//     abstract y(a:number):number
+
+//     w(b:number):void{
+//         console.log(b)
+//     }
+// }
+
+// Classe abstrata
+abstract class Calculo {
+    protected resultado:number = 0
+
+    abstract executar(...numeros:number[]): void
+
+    getResultado(): number{
+        return this.resultado
+    }
+}
+
+class Soma extends Calculo {
+    executar(...numeros: number[]):void{
+        this.resultado = numeros.reduce((t, a)=>t+a)
+    }
+}
+class Mutiplicacao extends Calculo {
+    executar(...numeros: number[]):void{
+        this.resultado = numeros.reduce((t, a)=>t*a)
+    }
+}
+// Exemplo de poliformismo
+// Ora é soma ora é mutiplicação
+let c1:Calculo = new Soma()
+c1.executar(2,3,4,5)
+console.log(c1.getResultado())
+
+c1 = new Mutiplicacao()
+c1.executar(2,3,4,5)
+console.log(c1.getResultado())
