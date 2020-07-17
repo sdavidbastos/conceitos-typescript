@@ -138,7 +138,7 @@ class Matematica{
     static PI: number = 3.1416
 
     static areaCirc(raio:number):number{
-        return this.PI*raio*raio
+        return Matematica.PI*raio*raio
     }
 }
 
@@ -187,3 +187,37 @@ console.log(c1.getResultado())
 c1 = new Mutiplicacao()
 c1.executar(2,3,4,5)
 console.log(c1.getResultado())
+
+
+// Singleton
+class Unico {
+    private static instance: Unico = new Unico
+    private constructor(){}
+
+    static getInstance(): Unico{
+        return Unico.instance
+    }
+
+    agora(){
+        return new Date
+    }
+}
+
+// console.log(Unico.getInstance().agora())
+
+// Somente leitura
+
+class Aviao {
+    public readonly modelo: string
+
+    constructor(modelo: string,
+        public readonly prefixo:string){
+            this.modelo = modelo
+        }
+}
+
+// const turboHelice = new Aviao('rajada', 'bolado')
+// turboHelice.modelo = 'qwe'
+// turboHelice.prefixo = 'ewq'
+
+// console.log(turboHelice.modelo)
