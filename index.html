@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TypeScript</title>
-</head>
-<body>
-    <h1>E ai man</h1>
-    <script src="node_modules/systemjs/dist/system.js"></script>
-    <!-- <script src="build/basico.js"></script> -->
-    <!-- <script src="build/ecmascript/ecmascript.js"></script> -->
-    <script src="build/modulos/modulo.js"></script>
-    <script>
-        SystemJS.config({
-            baseUrl: "/modules",
-            packages: {
-                'build/modulos':{
-                    defaultJSExtension: true
-                }
-            }
-        })
-        SystemJS.import("./build/modulos/modulo.js")
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TypeScript</title>
+    </head>
+    <body>
+        <h1>E ai man</h1>
+        <script src="node_modules/systemjs/dist/system.js"></script>
+        <!-- <script src="build/basico.js"></script> -->
+        <!-- <script src="build/ecmascript/ecmascript.js"></script> -->
+        <script src="build/namespaces/geometriaCirc.js"></script>
+        <script src="build/namespaces/geometriaRect.js"></script>
+        <script src="build/namespaces/namespaces.js"></script>
+        <script src="build/namespaces/namespaces.js"></script>
+        <script>
+            // SystemJS.config({
+            //     baseUrl: "/modules",
+            //     packages: {
+            //         'build/modulos':{
+            //             defaultJSExtension: true
+            //         }
+            //     }
+            // })
+            // SystemJS.import("./build/modulos/modulo.js")
+        </script>
+        <script src="build/namespaces/namespaces.js"></script>
+        <script src="build/interfaces/interfaces.js"></script>
+    </body>
 </html>
