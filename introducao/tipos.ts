@@ -13,7 +13,7 @@ minhaIdade = 27;
 // console.log(typeof minhaIdade)
 
 // array
-let hobbies: (number|string)[] = ["cozinhar", "praticar", "esportes"];
+let hobbies: (number | string)[] = ["cozinhar", "praticar", "esportes"];
 // console.log(hobbies[0])
 // console.log(typeof hobbies)
 
@@ -59,8 +59,8 @@ function mutiplicar(numA: number, numB: number): number {
 console.log(mutiplicar(4.7, 9));
 
 const teste = function (a: number, b: number): boolean {
-  a
-  b
+  a;
+  b;
   return true;
 };
 
@@ -79,85 +79,85 @@ function Usuario(nome: string, idade: number) {
     idade,
   };
 }
-let david = Usuario('David', 22)
+let david = Usuario("David", 22);
 
 // Union Types
-let nota:number | string = 10
-console.log(`Minha nota é ${nota}!`)
-nota = '10'
-console.log(`Minha nota é ${nota}!`)
+let nota: number | string = 10;
+console.log(`Minha nota é ${nota}!`);
+nota = "10";
+console.log(`Minha nota é ${nota}!`);
 
 // Checando tipos
 
-let valor = 30
+let valor = 30;
 
-if(typeof valor === "number"){
-    console.log("É number!")
+if (typeof valor === "number") {
+  console.log("É number!");
 } else {
-    console.log(typeof valor)
+  console.log(typeof valor);
 }
 
 // never
 
-function falha(msg: string): never{
-    throw new Error(msg)
+function falha(msg: string): never {
+  throw new Error(msg);
 }
 
 const produto = {
-    nome: 'sabão',
-    preco:2,
-    validarproduto(){
-        if(!this.nome || this.nome.trim().length == 0){
-            falha('Precisa ter um nome')
-        }
-        if(this.preco <= 0){
-            falha('Preco inválido!')
-        }
+  nome: "sabão",
+  preco: 2,
+  validarproduto() {
+    if (!this.nome || this.nome.trim().length == 0) {
+      falha("Precisa ter um nome");
     }
-}
+    if (this.preco <= 0) {
+      falha("Preco inválido!");
+    }
+  },
+};
 
-produto.validarproduto()
+produto.validarproduto();
 
-let alturaOpicional: null | number = 12
+let alturaOpicional: null | number = 12;
 
-alturaOpicional = null
+alturaOpicional = null;
 
 type Contato = {
-    nome: string,
-    tel1: string,
-    tel2: string | null
-}
+  nome: string;
+  tel1: string;
+  tel2: string | null;
+};
 
 const contato1: Contato = {
-    nome: 'Fulano',
-    tel1: '40028922',
-    tel2: null
-}
+  nome: "Fulano",
+  tel1: "40028922",
+  tel2: null,
+};
 
 // Desafio
 
 type ContaBancaria = {
-    saldo: number,
-    depositar: (valor:number) => void
-}
+  saldo: number;
+  depositar: (valor: number) => void;
+};
 
 type Correntista = {
-    nome: string,
-    contaBancaria: ContaBancaria,
-    contatos: string[]
-}
+  nome: string;
+  contaBancaria: ContaBancaria;
+  contatos: string[];
+};
 
 let contaBancaria: ContaBancaria = {
-    saldo: 3456,
-    depositar(valor) {
-        this.saldo += valor
-    }
-}
+  saldo: 3456,
+  depositar(valor) {
+    this.saldo += valor;
+  },
+};
 let correntista: Correntista = {
-    nome: "david",
-    contaBancaria:contaBancaria,
-    contatos: ['34567890', '98765432']
-}
+  nome: "david",
+  contaBancaria: contaBancaria,
+  contatos: ["34567890", "98765432"],
+};
 
-correntista.contaBancaria.depositar(3000)
-console.log(correntista)
+correntista.contaBancaria.depositar(3000);
+console.log(correntista);

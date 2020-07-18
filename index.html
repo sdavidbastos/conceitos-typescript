@@ -7,8 +7,20 @@
 </head>
 <body>
     <h1>E ai man</h1>
+    <script src="node_modules/systemjs/dist/system.js"></script>
     <!-- <script src="build/basico.js"></script> -->
     <!-- <script src="build/ecmascript/ecmascript.js"></script> -->
-    <script src="build/classes/desafio.js"></script>
+    <script src="build/modulos/modulo.js"></script>
+    <script>
+        SystemJS.config({
+            baseUrl: "/modules",
+            packages: {
+                'build/modulos':{
+                    defaultJSExtension: true
+                }
+            }
+        })
+        SystemJS.import("./build/modulos/modulo.js")
+    </script>
 </body>
 </html>
