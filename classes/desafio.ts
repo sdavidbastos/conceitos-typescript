@@ -32,7 +32,7 @@ moto.falar();
 abstract class Objeto2D {
   constructor(public base: number = 0, public altura: number = 0) {}
 
-  /**
+  /*
    * Utiliza-se o absctract para
    * tornar o metodo ou atributo
    * obrigatório no objeto filho
